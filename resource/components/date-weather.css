@@ -3,7 +3,7 @@
   min-width: 460px;
   max-width: 600px;
   height: 180px;
-  margin-top: 5.5em;
+  margin-top: 6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,7 +13,7 @@
 .current-date,
 .current-day {
   font-weight: 100;
-  font-size: 3em;
+  font-size: 3rem;
   margin-bottom: 16px;
 }
 
@@ -27,10 +27,10 @@
 
 .current-weather {
   font-weight: 100;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.2rem;
 }
 
 .current-weather span {
@@ -39,7 +39,7 @@
 
 .current-clock {
   /* height: 120px; */
-  font-size: 5.2em;
+  font-size: 5.2rem;
   font-weight: 700;
   letter-spacing: 3px;
   padding-top: 8px;
