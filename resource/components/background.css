@@ -1,0 +1,23 @@
+.background-img {
+  background-image: url("/images/img/test.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+}
+
+.background-gradation {
+  width: 100vw;
+  height: 40vh;
+  opacity: 100%;
+  /* background-color: royalblue; */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), #000000);
+}
+
+.bottom {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000000);
+}

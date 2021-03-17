@@ -25,25 +25,20 @@
 
 .current-weather {
   font-weight: 100;
-  font-size: 25px;
+  font-size: 24px;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .current-weather span {
-  margin-left: 20px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.current-clock {
-  font-size: 110px;
-  font-weight: 700;
-  display: flex;
+  margin-left: 16px;
 }
 
 .current-clock {
   height: 120px;
-  display: flex;
-  align-items: flex-start;
+  font-size: 108px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  padding-top: 6px;
 }

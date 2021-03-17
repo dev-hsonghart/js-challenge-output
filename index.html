@@ -11,11 +11,11 @@
     <article class="current-date-weather">
       <div class="current-date-weather-cloumn left">
         <div class="current-date">
-          <span class="cureent-date--bold month">3</span>월
-          <span class="cureent-date--bold date">3</span>일
+          <span class="cureent-date--bold month"></span>월
+          <span class="cureent-date--bold date"></span>일
         </div>
         <div class="current-day">
-          <span class="cureent-date--bold day">월</span>요일
+          <span class="cureent-date--bold day"></span>요일
         </div>
       </div>
       <div class="current-date-weather-cloumn right">
@@ -27,6 +27,21 @@
         <div class="current-clock">15:16</div>
       </div>
     </article>
-    <script src="" defer></script>
+    <input class="input-userName" type="text" />
+
+    <!-- background img -->
+    <section class="background-img">
+      <div class="background-gradation"></div>
+      <div class="background-gradation bottom"></div>
+    </section>
+    <!-- javascript -->
+    <script src="resource/js/loadClock.js" defer></script>
+    <script src="resource/js/loadCity.js" defer></script>
+    <!-- api -->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhI_RjsgCGG20y-C4pPT8_BXqb6HZ7dDM"
+    ></script>
   </body>
 </html>
