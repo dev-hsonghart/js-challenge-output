@@ -43,3 +43,19 @@
   padding-top: 8px;
   display: flex;
 }
+/* 블링크 애니메이션 처리 */
+.current-clock__colon {
+  animation: blink 1s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
