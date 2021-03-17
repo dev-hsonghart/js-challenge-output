@@ -1,7 +1,9 @@
 .current-date-weather {
-  width: 630px;
+  width: calc(100vw - 40%);
+  min-width: 460px;
+  max-width: 600px;
   height: 180px;
-  margin-top: 181px;
+  margin-top: 5.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +13,7 @@
 .current-date,
 .current-day {
   font-weight: 100;
-  font-size: 65px;
+  font-size: 3em;
   margin-bottom: 16px;
 }
 
@@ -25,10 +27,10 @@
 
 .current-weather {
   font-weight: 100;
-  font-size: 24px;
+  font-size: 1.5em;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 16px;
+  margin-bottom: 0.2em;
 }
 
 .current-weather span {
@@ -36,8 +38,8 @@
 }
 
 .current-clock {
-  height: 120px;
-  font-size: 102px;
+  /* height: 120px; */
+  font-size: 5.2em;
   font-weight: 700;
   letter-spacing: 3px;
   padding-top: 8px;
@@ -46,6 +48,13 @@
 /* 블링크 애니메이션 처리 */
 .current-clock__colon {
   animation: blink 1s ease-in-out infinite alternate;
+}
+
+.current-hour,
+.current-clock__colon,
+.current-minutes {
+  display: flex;
+  align-items: center;
 }
 
 @keyframes blink {

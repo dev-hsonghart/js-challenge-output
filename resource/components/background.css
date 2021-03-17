@@ -1,6 +1,7 @@
 .background-img {
   background-image: url("/images/img/test.jpg");
   background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
