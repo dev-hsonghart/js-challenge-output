@@ -5,7 +5,8 @@ paintDate = leftColumn.querySelector(".date"),
 paintDay = leftColumn.querySelector(".day"),
 
 rightColumn = document.querySelector(".right"),
-paintTime = rightColumn.querySelector(".current-clock");
+paintHour = rightColumn.querySelector(".current-hour"),
+paintMinutes = rightColumn.querySelector(".current-minutes");
 
 
 function getTime(){
@@ -23,7 +24,8 @@ function getTime(){
   paintMonth.innerText = `${month}`;
   paintDate.innerText = `${date}`;
   paintDay.innerText = `${dayValue}`
-  paintTime.innerText = `${hour < 0 ? `0${hour}` : hour}:${minutes < 0 ? `0${minutes}` : minutes}`;
+  paintHour.innerText = ` ${hour < 10 ? `0${hour}` : hour} `;
+  paintMinutes.innerText = ` ${minutes < 10 ? `0${minutes}` : minutes} `;
 }
 
 function init(){

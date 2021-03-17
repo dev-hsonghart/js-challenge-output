@@ -24,7 +24,11 @@
           <span class="current-tem">30도</span>
           <span class="current-sky">흐림</span>
         </div>
-        <div class="current-clock">15:16</div>
+        <div class="current-clock">
+          <div class="current-hour"></div>
+          <div class="current-clock__colon">:</div>
+          <div class="current-minutes"></div>
+        </div>
       </div>
     </article>
     <input class="input-userName" type="text" />
@@ -36,7 +40,7 @@
     </section>
     <!-- javascript -->
     <script src="resource/js/loadClock.js" defer></script>
-    <script src="resource/js/loadCity.js" defer></script>
+    <!-- <script src="resource/js/loadCity.js" defer></script> -->
     <!-- api -->
     <script
       async

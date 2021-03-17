@@ -28,7 +28,7 @@
   font-size: 24px;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .current-weather span {
@@ -37,8 +37,9 @@
 
 .current-clock {
   height: 120px;
-  font-size: 108px;
+  font-size: 102px;
   font-weight: 700;
   letter-spacing: 3px;
-  padding-top: 6px;
+  padding-top: 8px;
+  display: flex;
 }
