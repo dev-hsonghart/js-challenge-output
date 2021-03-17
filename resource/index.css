@@ -1,1 +1,18 @@
 @import "reset.css";
+/* font 셋팅 */
+@import "/resource/components/date-weather.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, "Helvetica Neue", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  /* 임시 바탕 */
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
