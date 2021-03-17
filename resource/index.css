@@ -1,4 +1,5 @@
 @import "reset.css";
+@import "color-palette.css";
 /* component */
 @import "/resource/components/date-weather.css";
 @import "/resource/components/input.css";
@@ -17,4 +18,12 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.showing {
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
