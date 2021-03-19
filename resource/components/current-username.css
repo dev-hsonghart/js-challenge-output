@@ -1,0 +1,22 @@
+.current-username-container {
+  width: calc(100vw - 40%);
+  min-width: 460px;
+  max-width: 600px;
+  margin-top: 7.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.current-username-left {
+  display: flex;
+  align-items: center;
+}
+
+.current-username {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.09);
+  border-radius: 1.59375rem;
+  margin-right: 1rem;
+}

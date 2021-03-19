@@ -4,6 +4,7 @@
 @import "/resource/components/date-weather.css";
 @import "/resource/components/input.css";
 @import "/resource/components/background.css";
+@import "/resource/components/current-username.css";
 
 * {
   box-sizing: border-box;
@@ -13,7 +14,6 @@ body {
   font-family: -apple-system, "Helvetica Neue", sans-serif;
   width: 100vw;
   height: 100vh;
-
   color: white;
   display: flex;
   align-items: center;
@@ -25,5 +25,6 @@ body {
 }
 
 .hidden {
-  display: none;
+  /* 이미 숨겨진 상태 */
+  visibility: hidden;
 }
