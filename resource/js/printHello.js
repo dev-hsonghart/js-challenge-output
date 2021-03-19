@@ -18,12 +18,14 @@ helloDay = [
 helloEvening = [
   "저녁 드셨어요?",
   "뭘 하며 쉴까요? 👀",
-  "12시 전엔 자야돼요!"
+  "12시 전엔 자야돼요!",
+  "오늘 하루도 고생했어요. 👍"
 ],
 helloNight = [
   "🥱 시간이 늦었어요!",
   "이제 침대에서 쉴까요? 😉",
-  "올빼미 같으니라구! 🌙"
+  "올빼미 같으니라구! 🌙",
+  "내일은 뭘 먹고 싶어요?"
 ]
 const displayHello = document.querySelector(".print-hello");
 
@@ -49,7 +51,6 @@ function printHello(){
     }
   else if(hour >= 0 && hour < 6) // 00~6 새벽
     {
-      console.log(("test"));
       displayHello.innerText = randomHello(helloNight);
     }
   

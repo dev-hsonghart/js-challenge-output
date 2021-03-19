@@ -9,6 +9,13 @@ function loadUserName(){
   currentUserName.innerText = `${USER_LS} 님!`
 }
 
+function paintToDo(){ // 투두입력 추가
+  const input = document.createElement("input")
+  inputContainer.appendChild(input);
+  input.classList.add("input-todo");
+  input.placeholder = "✍🏻 내용을 입력하세요.";
+}
+
 function displayUserName(userName){
   currentUserNameBox.classList.remove("hidden");
   currentUserName.innerText = `${userName} 님!`
@@ -18,17 +25,18 @@ function paintInputName(){
   const input = document.createElement("input")
   inputContainer.appendChild(input);
   input.classList.add("input-username");
-  input.placeholder = "👀 당신을 뭐라고 부를까요?"
-  const inputUserName = inputContainer.querySelector(".input-username");
+  input.placeholder = "👀 당신을 뭐라고 부를까요?";
+  input.maxLength = 10;
   
-  inputUserName.addEventListener("keydown", (e)=>{ // userNameInput 이벤트 리스너
-    const eKey = e.key
-    if(eKey === "Enter"){
-      localStorage.setItem("userName", input.value);
-      inputContainer.removeChild(input);
-      displayUserName(input.value)
-    }
-  })
+  inputContainer.addEventListener("submit", (e)=>
+  {
+    e.preventDefault() // userNameInput 이벤트 리스너
+    localStorage.setItem("userName", input.value);
+    inputContainer.removeChild(input);
+    displayUserName(input.value)
+    paintToDo()
+  }  
+  )
 }
 
 function init(){
