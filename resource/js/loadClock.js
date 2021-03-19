@@ -30,7 +30,7 @@ function getTime(){
 
 function init(){
   getTime();
-  setInterval(getTime, 60000);
+  setInterval(getTime, 1000);
 }
 
 init();
