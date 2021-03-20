@@ -79,11 +79,6 @@
   background-color : var(--gray);
   cursor: pointer;
 }
-
-.btn-del:hover .icon-del{
-  fill : var(--warmgray);
-}
-
 .btn-done:hover{
   background-color: var(--emerald-deep);
   cursor: pointer;

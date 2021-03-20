@@ -1,6 +1,6 @@
 const toDoInputBox = document.querySelector(".input-container"),
   backlogList = document.querySelector(".todo-list-backlog"),
-  backlogItems = backlogList.querySelectorAll(".backlog-item"),
+  doneList = document.querySelector(".todo-list-done"),
   iconDelSvg = `<?xml version="1.0" encoding="UTF-8"?>
   <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g  stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -20,12 +20,18 @@ iconCheckSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" v
 </g>
 </svg>`
 
-const TODO_LS = "todos";
+const TODO_LS = "todos",
+  DONE_LS = "done";
 
-let todos = [];
+let todos = [],
+  dones = [];
 
 function saveToDo(){
   localStorage.setItem(TODO_LS, JSON.stringify(todos));
+}
+
+function saveDone(){
+  localStorage.setItem(DONE_LS, JSON.stringify(dones));
 }
 
 function loadTodos(){
@@ -38,53 +44,80 @@ function loadTodos(){
     }
 }
 
+function loadDones(){
+  const doneData = localStorage.getItem(DONE_LS);
+  if(doneData !== null){
+      const pasredDones = JSON.parse(doneData);
+      pasredDones.forEach(data => {
+          paintDone(data.text)
+      })
+  }
+}
+
 function moveItem(){
+  const backlogItem = backlogList.querySelector(".backlog-item"),
+  text = backlogItem.querySelector("span"),
+  btnDone = backlogItem.querySelector(".btn-done"),
+  newId = Math.random().toString(36).substr(2, 16);
 
+  // 타겟의 backlogItem을 doneList에 prepend한다.
+  doneList.prepend(backlogItem);
+  backlogItem.className = "done-item" // 클래스 바꾸기
+  btnDone.remove()
+
+  const cleanToDos = todos.filter(function(task){ // todos배열에 아래 조건에 맞는 것들을 모은다.
+    return task.id !== backlogItem.id; // 매개변수의 아이디와 해당대상의 아이디가 다른것들만 추리고 갖고 있는다.
+  })
+  todos = cleanToDos; // 투두스의 배열은 위에서 추린 배열과 같다.
+  saveToDo();
+
+  // 로컬스토리지 dones에 보내기
+  backlogItem.id = newId;
+  const doneObj = {
+    id : newId,
+    text : text.innerText
+  }
+
+  dones.push(doneObj);
+  saveDone();
+
+  // todo 로컬스토리지 업데이트
+ // 달라진 투두스의 배열을 저장하여 업데이트한다.
 }
 
-function removeItem(){
+function removeItem(e){
+  const eClass = e.target.className,
+  parent = e.target.parentNode;
+    console.log(parent);
+  // backlogItem 지우기
+  if(eClass === "btn-del" && parent.className === "backlog-item"){ // 로컬스토리지에서 타겟 id를 찾아 지운다.
+    const cleanToDos = todos.filter(function(task){ // todos배열에 아래 조건에 맞는 것들을 모은다.
+      return task.id !== parent.id; // 매개변수의 아이디와 해당대상의 아이디가 다른것들만 추리고 갖고 있는다.
+  })
 
+  todos = cleanToDos; // 투두스의 배열은 위에서 추린 배열과 같다.
+  saveToDo(); // 달라진 투두스의 배열을 저장하여 업데이트한다.
+  parent.remove();
+  }
+
+  // todoItem 지우기
+  else if(eClass === "btn-del" && parent.className === "done-item"){
+    const cleanDones = dones.filter(function(task){
+      return task.id !== parent.id;
+    })
+
+    dones = cleanDones;
+    saveDone();
+    parent.remove();
+  }
 }
-
-// function paintBtn(){
-//   const btnDel = document.createElement("button"),
-//   btnDone = document.createElement("button"),
-//   btnParent = document.querySelector(".backlog-item--hover");
-
-//   btnParent.appendChild(btnDel);
-//   btnDel.classList.add("btn-del");
-//   const del = btnParent.querySelector(".btn-del");
-//   del.innerHTML = iconDelSvg;
-
-//   btnParent.appendChild(btnDone);
-//   btnDone.classList.add("btn-done");
-//   const done = btnParent.querySelector(".btn-done");
-//   done.innerHTML = iconCheckSvg;
-
-//   // 버튼 이벤트 넣기
-
-//   del.addEventListener("click", removeItem)
-//   done.addEventListener("click", moveItem)
-// }
-
-// function paintHover(){
-//   const div = document.createElement("div");
-
-//   const backlogItem = backlogList.querySelector(".backlog-item");
-//   console.log(backlogItem);
-//   if(backlogItem)
-//   backlogItem.prepend(div);
-//   div.classList.add("backlog-item--hover");
-//   const hover = backlogItem.querySelector(".backlog-item--hover")
-
-//   paintBtn() // hover 안에 버튼 만들기
-// }
 
 function paintToDo(text){
   const div = document.createElement("div"),
     span = document.createElement("span"),
     btnDel = document.createElement("button"),
-    btnDone = document.createElement("button");
+    btnDone = document.createElement("button"),
+    newId = Math.random().toString(36).substr(2, 16);
 
   backlogList.prepend(div);
   div.classList.add("backlog-item");
@@ -105,28 +138,59 @@ function paintToDo(text){
   const del = backlogItem.querySelector(".btn-del");
   del.innerHTML = iconDelSvg;
   del.addEventListener("click", removeItem);
+
+  backlogItem.id = newId;
+  const toDoObj = {
+    id : newId,
+    text : text
+  }
+
+  todos.push(toDoObj); // todos array로 데이터 보내기
+    saveToDo(); // todos array 로컬스토리지에 저장하기
+}
+
+function paintDone(text){ // 로컬스토리지 DONE에 있는 데이터를 donslist에 뿌리기
+  const div = document.createElement("div"),
+    span = document.createElement("span"),
+    btnDel = document.createElement("button"),
+    newId = Math.random().toString(36).substr(2, 16);
+
+  doneList.prepend(div);
+  div.classList.add("done-item");
+  const doneItem = doneList.querySelector(".done-item");
+  
+  doneItem.appendChild(span);
+  const doneText = doneList.querySelector("span");
+  doneText.innerText = text; // todo item 생성
+
+  doneItem.appendChild(btnDel);
+  btnDel.classList.add("btn-del");
+  const del = doneItem.querySelector(".btn-del");
+  del.innerHTML = iconDelSvg;
+  del.addEventListener("click", removeItem);
+
+  doneItem.id = newId;
+  const doneObj = {
+    id : newId,
+    text : text
+  }
+
+  dones.push(doneObj); // todos array로 데이터 보내기
+    saveDone(); // todos array 로컬스토리지에 저장하기
 }
 
 function displayInputTodo(){
-  const input = document.createElement("input"),
-  newId = Math.random().toString(36).substr(2, 16);
+  const input = document.createElement("input");
 
   toDoInputBox.appendChild(input); // 투두 입력칸 생성 셋팅
   input.classList.add("input-todo");
   input.placeholder = "✍🏻 내용을 입력하세요.";
-  input.id = newId;
 
   toDoInputBox.addEventListener("submit", (e)=>{ // toDoInput 이벤트 리스너
     e.preventDefault();
-    const toDoObj = {
-      id : newId,
-      text : input.value
-    }
-      todos.push(toDoObj); // todos array로 데이터 보내기
-      saveToDo(); // todos array 로컬스토리지에 저장하기
-      paintToDo(input.value); // paint todolist
-      input.value = ""; // reset input value
-    }
+    paintToDo(input.value); // paint todolist
+    input.value = ""; // reset input value
+  }
   )
 }
 
@@ -134,6 +198,7 @@ function init(){
   if(USER_LS !== null){
     displayInputTodo()
     loadTodos();
+    loadDones();
   }
 
 }
