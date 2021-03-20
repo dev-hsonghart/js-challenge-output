@@ -1,5 +1,5 @@
-.input-form,
-.todo-input-form {
+.input-form-username,
+.input-form-todo {
   width: calc(100% - 50%);
   min-width: 28.75rem;
   max-width: 600px;

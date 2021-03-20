@@ -1,14 +1,9 @@
-const userNameInputForm = document.querySelector(".input-form"),
+const userNameInputForm = document.querySelector(".input-form-username"),
   inputUserName = document.querySelector(".input-username"),
   currentUserNameBox = document.querySelector(".current-username-container"),
   currentUserName = currentUserNameBox.querySelector(".current-username");
 
 const USER_LS = localStorage.getItem("userName");
-
-function loadUserName(){
-  currentUserNameBox.classList.remove("hidden");
-  currentUserName.innerText = `${USER_LS} 님!`
-}
 
 function displayUserName(userName){
   currentUserNameBox.classList.remove("hidden");
@@ -16,6 +11,7 @@ function displayUserName(userName){
 }
 
 function init(){
+  const inputToDo = document.querySelector(".input-todo")
   if(USER_LS === null){
     userNameInputForm.addEventListener("submit", (e)=>
   {
@@ -26,13 +22,13 @@ function init(){
     displayUserName(text)
     userNameInputForm.remove();
     userNameInputForm.classList.add("none");
-    inputUserName.classList.remove("hidden");
+    inputToDo.classList.remove("hidden");
   }  
   )  
   } else{
     userNameInputForm.remove();
     userNameInputForm.classList.add("none");
-    loadUserName() 
+    displayUserName(USER_LS)
   }
 }
 

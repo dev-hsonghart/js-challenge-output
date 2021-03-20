@@ -1,4 +1,4 @@
-const toDoInputBox = document.querySelector(".todo-input-form"),
+const toDoInputBox = document.querySelector(".input-form-todo"),
   backlogList = document.querySelector(".todo-list-backlog"),
   doneList = document.querySelector(".todo-list-done"),
   iconDelSvg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -178,14 +178,14 @@ function paintDone(text){ // 로컬스토리지 DONE에 있는 데이터를 dons
 function init(){
   const toDoForm = document.querySelector(".input-todo");
       
+  toDoInputBox.addEventListener("submit", (e)=>{ // toDoInput 이벤트 리스너
+    e.preventDefault();
+    paintToDo(toDoForm.value); // paint todolist
+    toDoForm.value = ""; // reset input value
+  }
+  )
   if(USER_LS !== null){
     toDoForm.classList.remove("hidden") // todoinput 항시 표시
-    toDoInputBox.addEventListener("submit", (e)=>{ // toDoInput 이벤트 리스너
-      e.preventDefault();
-      paintToDo(toDoForm.value); // paint todolist
-      toDoForm.value = ""; // reset input value
-    }
-    )
     loadTodos();
     loadDones();
   }
