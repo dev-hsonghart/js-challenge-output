@@ -8,7 +8,6 @@ function getRandomNum(){
 
 function paintImg(num){
   const image = new Image();
-  console.dir(image);
   image.src = `images/img/0${num + 1}.jpg`;
   bg.appendChild(image)
   image.classList.add("background-img");

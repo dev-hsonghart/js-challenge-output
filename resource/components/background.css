@@ -23,6 +23,7 @@
   position: absolute;
   object-fit: cover;
   animation: fadeIn 1s ease-in;
+  z-index: -1;
 }
 
 .background-gradation {
