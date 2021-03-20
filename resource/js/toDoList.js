@@ -1,4 +1,4 @@
-const toDoInputBox = document.querySelector(".input-container"),
+const toDoInputBox = document.querySelector(".todo-input-form"),
   backlogList = document.querySelector(".todo-list-backlog"),
   doneList = document.querySelector(".todo-list-done"),
   iconDelSvg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -69,7 +69,7 @@ function moveItem(){
     return task.id !== backlogItem.id; // 매개변수의 아이디와 해당대상의 아이디가 다른것들만 추리고 갖고 있는다.
   })
   todos = cleanToDos; // 투두스의 배열은 위에서 추린 배열과 같다.
-  saveToDo();
+  saveToDo(); // 투두스 업데이트
 
   // 로컬스토리지 dones에 보내기
   backlogItem.id = newId;
@@ -80,15 +80,11 @@ function moveItem(){
 
   dones.push(doneObj);
   saveDone();
-
-  // todo 로컬스토리지 업데이트
- // 달라진 투두스의 배열을 저장하여 업데이트한다.
 }
 
 function removeItem(e){
   const eClass = e.target.className,
   parent = e.target.parentNode;
-    console.log(parent);
   // backlogItem 지우기
   if(eClass === "btn-del" && parent.className === "backlog-item"){ // 로컬스토리지에서 타겟 id를 찾아 지운다.
     const cleanToDos = todos.filter(function(task){ // todos배열에 아래 조건에 맞는 것들을 모은다.
@@ -179,24 +175,17 @@ function paintDone(text){ // 로컬스토리지 DONE에 있는 데이터를 dons
     saveDone(); // todos array 로컬스토리지에 저장하기
 }
 
-function displayInputTodo(){
-  const input = document.createElement("input");
-
-  toDoInputBox.appendChild(input); // 투두 입력칸 생성 셋팅
-  input.classList.add("input-todo");
-  input.placeholder = "✍🏻 내용을 입력하세요.";
-
-  toDoInputBox.addEventListener("submit", (e)=>{ // toDoInput 이벤트 리스너
-    e.preventDefault();
-    paintToDo(input.value); // paint todolist
-    input.value = ""; // reset input value
-  }
-  )
-}
-
 function init(){
+  const toDoForm = document.querySelector(".input-todo");
+      
   if(USER_LS !== null){
-    displayInputTodo()
+    toDoForm.classList.remove("hidden") // todoinput 항시 표시
+    toDoInputBox.addEventListener("submit", (e)=>{ // toDoInput 이벤트 리스너
+      e.preventDefault();
+      paintToDo(toDoForm.value); // paint todolist
+      toDoForm.value = ""; // reset input value
+    }
+    )
     loadTodos();
     loadDones();
   }

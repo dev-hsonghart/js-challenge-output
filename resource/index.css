@@ -22,8 +22,8 @@ body {
   overflow: hidden;
 }
 
-.showing {
-  display: block;
+.none {
+  display: none;
 }
 
 .hidden {

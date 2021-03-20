@@ -10,12 +10,19 @@
   justify-content: center;
   margin-top: 36px;
   color: var(--textDefault);
+  overflow:hidden;
 }
 
 .todo-list-backlog,
 .todo-list-done {
   width: 50%;
   font-size: 1.25rem;
+  overflow: scroll;
+}
+
+.todo-list-backlog::-webkit-scrollbar,
+.todo-list-done::-webkit-scrollbar{
+  display: none;
 }
 
 /* 여백 */
