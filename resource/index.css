@@ -16,6 +16,7 @@ body {
   width: 100vw;
   height: 100vh;
   color: white;
+  background-color: black;
   display: flex;
   align-items: center;
   flex-direction: column;

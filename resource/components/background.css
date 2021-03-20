@@ -1,7 +1,4 @@
-.background-img {
-  background-image: url("/images/img/test.jpg");
-  background-size: cover;
-  background-position: center;
+.background-container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -9,6 +6,23 @@
   height: 100vh;
   z-index: -1;
   position: absolute;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.background-img {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  object-fit: cover;
+  animation: fadeIn 1s ease-in;
 }
 
 .background-gradation {
