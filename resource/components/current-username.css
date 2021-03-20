@@ -1,8 +1,8 @@
 .current-username-container {
-  width: calc(100vw - 40%);
+  width: calc(100vw - 50%);
   min-width: 460px;
   max-width: 600px;
-  margin-top: 7.5rem;
+  margin-top: 5rem;
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;

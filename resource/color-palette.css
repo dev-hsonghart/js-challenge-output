@@ -8,10 +8,11 @@
   --deepWhite: #ededef;
   --deepWhite-30: rgba(237, 237, 239, 0.3);
   --gray: #cacaca;
+  --gray-deep: #b3b3b3;
   --warmgray: #696969;
   /* color */
-  --emerald: #6dd400;
-  --emerald-deep: #559c08;
+  --emerald: #38d66d;
+  --emerald-deep: #1cb44f;
   /* shadow */
   --btnShadow-60: rgba(114, 118, 137, 0.6);
   --btnShadow-30: rgba(114, 118, 137, 0.3);
