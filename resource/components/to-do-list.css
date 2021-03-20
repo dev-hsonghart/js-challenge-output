@@ -1,0 +1,112 @@
+.test {
+  word-break: normal;
+}
+
+.todo-list {
+  width: calc(100vw - 40%);
+  min-width: 460px;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+  color: var(--textDefault);
+}
+
+.todo-list-backlog,
+.todo-list-done {
+  width: 50%;
+  font-size: 1.25rem;
+}
+
+/* 여백 */
+.todo-list-fake-empty {
+  width: 2.25rem;
+}
+
+.backlog-item,
+.done-item {
+  position: relative;
+  width: 100%;
+  word-break: break-all;
+  padding: 1.875rem;
+  background-color: white;
+  border-radius: 0.625rem;
+  margin-bottom: 0.75rem;
+}
+
+.done-item {
+  background-image: url(/images/svg/icon-checked.svg);
+  background-size: 6.25rem;
+  background-repeat: no-repeat;
+  background-position-x: 110%;
+  background-position-y: -10%; back;
+  background-color: var(--gray);
+  /* text style */
+  text-decoration: line-through;
+}
+
+/* 리스트 호버링 스타일 */
+.backlog-item--hover,
+.done-item--hover {
+  background-color: var(--blueWhite-60);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.625rem;
+  /* 버튼 정렬 */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.btn-del,
+.btn-done{
+  background-color: var(--blueWhite);
+  width: 3.625rem;
+  height: 2.8125rem;
+  border-radius: 0.75rem;
+  margin-right: .75rem;
+  margin-bottom: 1rem;
+  /* 그림자 */
+  box-shadow: -1px -1px 3px var(--blueWhite), 
+  1px 1px 4px var(--btnShadow-30) ,
+  3px 3px 9px var(--btnShadow-60), 
+  -3px -3px 10px 3px white;
+}
+
+.btn-del:hover,
+.btn-done:hover{
+ cursor: pointer;
+}
+
+.btn-del:hover .icon-check,
+.btn-done:hover .icon-check{
+  fill: var(--emerald);
+}
+
+.btn-del:hover .icon-del,
+.btn-done:hover .icon-del{
+  fill: tomato
+}
+
+.btn-del:active,
+.btn-done:active{
+ cursor: pointer;
+ border: solid 1.5px var(--deepWhite-30);
+ /* 그림자 */
+ box-shadow: -2px -2px 4px white,
+ 2px 2px 2px -1px var(--btnShadow-60),
+  inset 4px 3px 10px var(--btnShadow-30);
+}
+
+.btn-del:active .icon-check,
+.btn-done:active .icon-check{
+  fill: var(--emerald-deep);
+}
+
+.btn-del:active .icon-del,
+.btn-done:active .icon-del{
+  fill: rgb(228, 70, 42);
+}

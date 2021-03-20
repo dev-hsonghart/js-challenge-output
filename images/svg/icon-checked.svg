@@ -1,7 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="107" height="107" viewBox="0 0 107 107">
-    <g fill="none" fill-rule="evenodd">
-        <g fill="#000" fill-rule="nonzero">
-            <path d="M1332.5 525c-29.487 0-53.5 24.013-53.5 53.5s24.013 53.5 53.5 53.5 53.5-24.013 53.5-53.5-24.013-53.5-53.5-53.5zm-7.672 78L1301 579.127l7.111-7.087 16.842 16.785L1357.89 556l7.111 7.087L1324.828 603z" transform="translate(-1279 -525)"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="107px" height="107px" viewBox="0 0 107 107" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-checked</title>
+    <g id="자바스크립트-챌린지-졸업작품" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.3">
+        <g id="add-todos" transform="translate(-1209.000000, -533.000000)" fill="#00750C" fill-rule="nonzero">
+            <path d="M1262.5,533 C1233.01279,533 1209,557.012791 1209,586.5 C1209,615.987209 1233.01279,640 1262.5,640 C1291.98721,640 1316,615.987209 1316,586.5 C1316,557.012791 1291.98721,533 1262.5,533 Z M1254.82846,611 L1231,587.126984 L1238.11111,580.039683 L1254.95322,596.825397 L1287.88889,564 L1295,571.087302 L1254.82846,611 Z" id="icon-checked"></path>
         </g>
     </g>
 </svg>

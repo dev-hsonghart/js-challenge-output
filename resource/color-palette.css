@@ -1,5 +1,19 @@
 /* 컬러 팔레트 전체 목록 */
 
 :root {
+  /* grayscale */
   --textDefault: #222222;
+  --blueWhite-60: rgba(226, 227, 230, 0.6);
+  --blueWhite: #e2e3e6;
+  --deepWhite: #ededef;
+  --deepWhite-30: rgba(237, 237, 239, 0.3);
+  --gray: #cacaca;
+  --warmgray: #696969;
+  /* color */
+  --emerald: #6dd400;
+  --emerald-deep: #559c08;
+  /* shadow */
+  --btnShadow-60: rgba(114, 118, 137, 0.6);
+  --btnShadow-30: rgba(114, 118, 137, 0.3);
+  --btnShadow: #727689;
 }
