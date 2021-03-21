@@ -28,6 +28,7 @@ body {
 }
 
 .none {
+  /* html에서 삭제 */
   display: none;
 }
 
