@@ -1,4 +1,4 @@
-@import "css/keyframe.css";
+@import "keyframe.css";
 
 .current-date-weather {
   width: calc(100vw - 50%);
