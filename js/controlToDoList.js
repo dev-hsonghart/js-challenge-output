@@ -146,7 +146,7 @@ function paintToDo(text){
     del.addEventListener("click", removeItem);
 
   // 애니메이션 생성
-  backlogItem.style.animation = "fadeIn 0.5s forwards"
+  backlogItem.style.animation = "fadeIn 1.3s forwards"
 
   backlogItem.id = newId;
   const toDoObj = {
@@ -178,7 +178,7 @@ function paintDone(text){ // 로컬스토리지 DONE에 있는 데이터를 dons
     del.innerHTML = iconDelSvg;
     del.addEventListener("click", removeItem);
 
-  doneItem.style.animation = "fadeIn 0.5s forwards"
+  doneItem.style.animation = "fadeIn 1.3s forwards"
 
   doneItem.id = newId;
   const doneObj = {

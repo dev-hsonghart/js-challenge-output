@@ -1,3 +1,5 @@
+@import "/css/keyframe.css";
+
 .todo-list {
   width: calc(100vw - 50%);
   min-width: 460px;

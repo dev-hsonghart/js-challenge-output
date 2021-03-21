@@ -1,11 +1,11 @@
-@import "reset.css";
-@import "color-palette.css";
+@import "/css/reset.css";
+@import "/css/color-palette.css";
 /* component */
-@import "/resource/components/date-weather.css";
-@import "/resource/components/input.css";
-@import "/resource/components/background.css";
-@import "/resource/components/current-username.css";
-@import "/resource/components/to-do-list.css";
+@import "/css/components/date-weather.css";
+@import "/css/components/input.css";
+@import "/css/components/background.css";
+@import "/css/components/current-username.css";
+@import "/css/components/to-do-list.css";
 
 * {
   box-sizing: border-box;
