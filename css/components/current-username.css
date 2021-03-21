@@ -1,3 +1,5 @@
+@import "keyframe.css";
+
 .current-username-container {
   width: calc(100vw - 50%);
   min-width: 460px;
