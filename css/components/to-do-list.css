@@ -1,4 +1,4 @@
-@import "/css/keyframe.css";
+@import "css/keyframe.css";
 
 .todo-list {
   width: calc(100vw - 50%);
