@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/resource/index.css" />
-    <title>어서오슈</title>
+    <title>오늘은 뭐하지?</title>
   </head>
   <body>
     <article class="current-username-container hidden">
       <div class="current-username-left">
-        <div class="current-username">username 님!</div>
+        <div class="current-username">{username}님</div>
         <div class="print-hello"></div>
       </div>
       <div class="fake-div"></div>
@@ -57,11 +57,11 @@
         autofocus
       />
     </form>
+    <!-- todoList -->
     <section class="todo-list">
       <article class="todo-list-backlog"></article>
       <article class="todo-list-fake-empty"></article>
       <article class="todo-list-done"></article>
-      <!-- <div>투두</div> -->
     </section>
 
     <!-- background img -->
@@ -75,7 +75,6 @@
     <script src="resource/js/printHello.js" defer></script>
     <script src="resource/js/toDoList.js" defer></script>
     <script src="resource/js/controlBG.js" defer></script>
-    <script src="resource/js/loadCity.js"></script>
-    <!-- api -->
+    <script src="resource/js/loadCity.js" defer></script>
   </body>
 </html>

@@ -43,13 +43,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  /* 위치 이동 */
+  /* 애니메이션 기본값 위치 처리 */
   position: relative;
   top: 1.5rem;
 }
 
 .current-clock {
-  /* height: 120px; */
   font-size: 5.2rem;
   font-weight: 700;
   letter-spacing: 3px;
@@ -69,7 +68,7 @@
   align-items: center;
 }
 
-/* 날씨 정보 애니메이션 처리 */
+/* 날씨 정보 애니메이션 기본값 처리 */
 .current-location {
   position: relative;
   bottom: -50;

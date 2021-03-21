@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+*:not(body) {
+  opacity: 4;
+}
+
 body {
   font-family: -apple-system, "Helvetica Neue", sans-serif;
   width: 100vw;

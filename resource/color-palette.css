@@ -13,8 +13,5 @@
   /* color */
   --emerald: #38d66d;
   --emerald-deep: #1cb44f;
-  /* shadow */
-  --btnShadow-60: rgba(114, 118, 137, 0.6);
-  --btnShadow-30: rgba(114, 118, 137, 0.3);
-  --btnShadow: #727689;
+  --light-emerald: #d1ebd4;
 }

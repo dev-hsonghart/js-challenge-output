@@ -8,7 +8,7 @@
   position: absolute;
 }
 
-@keyframes fadeIn {
+@keyframes fadeInBG {
   0% {
     opacity: 0;
   }
@@ -22,7 +22,7 @@
   height: 100vh;
   position: absolute;
   object-fit: cover;
-  animation: fadeIn 1s ease-in;
+  animation: fadeInBG 1s ease-in;
   z-index: -1;
 }
 
@@ -30,7 +30,6 @@
   width: 100vw;
   height: 40vh;
   opacity: 100%;
-  /* background-color: royalblue; */
   background: linear-gradient(to top, rgba(0, 0, 0, 0), #000000);
 }
 

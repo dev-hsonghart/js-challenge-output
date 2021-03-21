@@ -1,4 +1,6 @@
-// html요소 불러오기
+// 1. 현재 시각을 불러온다.
+// 2. 불러온 시각을 html에 출력한다.
+
 const leftColumn = document.querySelector(".left"),
 paintMonth = leftColumn.querySelector(".month"),
 paintDate = leftColumn.querySelector(".date"),
