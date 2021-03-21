@@ -53,6 +53,7 @@ function getWeather(lat, lon){
 
 function handleGeoError(){
   locationError.innerText = "위치 정보가 없어요📍";
+  showAnimation();
 }
 
 function saveCoords(coordsObj){
