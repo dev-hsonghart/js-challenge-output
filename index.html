@@ -27,10 +27,12 @@
       </div>
       <div class="current-date-weather-cloumn right">
         <div class="current-weather">
-          <span class="access-error"></span>
-          <span class="current-location"></span>
-          <span class="current-tem"></span>
-          <span class="current-sky"></span>
+          <div class="weather-overflow">
+            <div class="access-error"></div>
+            <div class="current-location"></div>
+            <div class="current-tem"></div>
+            <div class="current-sky"></div>
+          </div>
         </div>
         <div class="current-clock">
           <span class="current-hour"></span>
@@ -52,6 +54,7 @@
         type="text"
         placeholder="✍🏻 내용을 입력하세요."
         class="input-todo hidden"
+        autofocus
       />
     </form>
     <section class="todo-list">

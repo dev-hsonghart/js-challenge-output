@@ -53,7 +53,7 @@ function printHello(){
     {
       displayHello.innerText = randomHello(helloNight);
     }
-  
+    displayHello.style.animation = "fadeInOut 60s ease-out infinite"
 }
 
 function setHelloText(){

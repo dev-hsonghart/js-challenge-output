@@ -23,12 +23,16 @@ function init(){
     userNameInputForm.remove();
     userNameInputForm.classList.add("none");
     inputToDo.classList.remove("hidden");
+    currentUserNameBox.style.animation = "fadeIn 1s ease-in alternate"
+    currentUserNameBox.style.animationFillMode = "forwards"
+
   }  
   )  
   } else{
     userNameInputForm.remove();
     userNameInputForm.classList.add("none");
     displayUserName(USER_LS)
+    currentUserNameBox.style.opacity = "1"
   }
 }
 

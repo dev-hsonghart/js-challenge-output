@@ -42,6 +42,11 @@
   margin-bottom: 0.75rem;
 }
 
+/* 애니메이션을 위한 기초값 설정 */
+.backlog-item{
+  opacity: 0;
+}
+
 .done-item {
   background-image: url(/images/svg/icon-checked.svg);
   background-size: 6.25rem;

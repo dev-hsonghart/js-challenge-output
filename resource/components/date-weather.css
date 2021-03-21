@@ -1,8 +1,9 @@
+@import "/resource/keyframe.css";
+
 .current-date-weather {
   width: calc(100vw - 50%);
   min-width: 460px;
   max-width: 600px;
-  height: 180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,15 +27,25 @@
 
 .current-weather {
   font-weight: 100;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   height: 1.5rem;
-  display: flex;
-  justify-content: flex-end;
   margin-bottom: 0.2rem;
+  overflow: hidden;
 }
 
-.current-weather span {
+.weather-overflow div {
   margin-left: 16px;
+}
+
+.weather-overflow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* 위치 이동 */
+  position: relative;
+  top: 1.5rem;
 }
 
 .current-clock {
@@ -44,6 +55,7 @@
   letter-spacing: 3px;
   padding-top: 8px;
   display: flex;
+  justify-content: flex-end;
 }
 /* 블링크 애니메이션 처리 */
 .current-clock__colon {
@@ -57,14 +69,8 @@
   align-items: center;
 }
 
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
+/* 날씨 정보 애니메이션 처리 */
+.current-location {
+  position: relative;
+  bottom: -50;
 }

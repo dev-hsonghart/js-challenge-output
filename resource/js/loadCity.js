@@ -20,7 +20,7 @@ function getWeather(lat, lon){
         currentWeather = json.weather[0].main;
       
       cityDisplay.innerText = currentCity
-      tempDisplay.innerText = `${currentTemp}도`
+      tempDisplay.innerText = `${currentTemp} ˚`
 
       if(currentWeather === "Clouds"){ //날씨가 흐릴 때 
         skyDisplay.innerText = "☁️"
@@ -35,6 +35,10 @@ function getWeather(lat, lon){
       } else if(currentWeather === "Clear"){ //날씨가 화찰할 때
         skyDisplay.innerText = "☀️"
       } 
+        // 애니메이션
+      if(skyDisplay.innerText !== ""){
+        showAnimation();
+      } 
     }
   )
 }
@@ -47,6 +51,12 @@ function saveCoords(coordsObj){
   localStorage.setItem(COORDS, JSON.stringify(coordsObj))
 }
 
+function showAnimation(){
+  const overflow =  citiWeatherContainer.querySelector(".weather-overflow");
+
+  overflow.style.animation = "to-top 1s ease-in forwards";
+}
+
 function handleGeoSuccess(position){
   const latitude = position.coords.latitude,
   longitude = position.coords.longitude;
@@ -56,7 +66,9 @@ function handleGeoSuccess(position){
   };
 
   saveCoords(coordsObj);
-  getWeather(latitude, longitude)
+  getWeather(latitude, longitude);
+
+
 }
 
 function askForCoords(){
