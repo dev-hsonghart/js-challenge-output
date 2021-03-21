@@ -27,6 +27,7 @@
 .current-weather {
   font-weight: 100;
   font-size: 1.5rem;
+  height: 1.5rem;
   display: flex;
   justify-content: flex-end;
   margin-bottom: 0.2rem;
