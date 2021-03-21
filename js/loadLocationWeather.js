@@ -45,6 +45,9 @@ function getWeather(lat, lon){
       } 
         // 애니메이션
       if(skyDisplay.innerText !== ""){
+        cityDisplay.classList.remove("none");
+        tempDisplay.classList.remove("none");
+        skyDisplay.classList.remove("none");
         showAnimation();
       } 
     }
@@ -53,6 +56,9 @@ function getWeather(lat, lon){
 
 function handleGeoError(){
   locationError.innerText = "위치 정보가 없어요📍";
+  cityDisplay.classList.add("none");
+  tempDisplay.classList.add("none");
+  skyDisplay.classList.add("none");
   showAnimation();
 }
 
