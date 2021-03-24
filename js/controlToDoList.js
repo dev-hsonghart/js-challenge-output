@@ -26,7 +26,15 @@ const toDoInputBox = document.querySelector(".input-form-todo"),
           </g>
       </g>
   </g>
-  </svg>`
+  </svg>`,
+  iconCheckedSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="107" height="107" viewBox="0 0 107 107">
+  <g fill="none" fill-opacity=".15" fill-rule="evenodd">
+      <g fill="#00750C" fill-rule="nonzero">
+          <path d="M1262.5 533c-29.487 0-53.5 24.013-53.5 53.5s24.013 53.5 53.5 53.5 53.5-24.013 53.5-53.5-24.013-53.5-53.5-53.5zm-7.672 78L1231 587.127l7.111-7.087 16.842 16.785L1287.89 564l7.111 7.087L1254.828 611z" transform="translate(-1209 -533)"/>
+      </g>
+  </g>
+</svg>
+`
 
 const TODO_LS = "todos",
   DONE_LS = "done";
