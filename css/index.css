@@ -6,6 +6,7 @@
 @import "components/background.css";
 @import "components/current-username.css";
 @import "components/to-do-list.css";
+@import "components/edit-popup.css";
 
 * {
   box-sizing: border-box;

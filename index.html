@@ -10,6 +10,17 @@
     <title>오늘은 뭐하지?</title>
   </head>
   <body>
+    <section class="current-username-edit">
+      <div class="current-username-eidt__wrap">
+        <span class="current-username-edit__title">닉네임 수정</span>
+        <input class="current-username-edit__input" type="text" maxlength="10">
+        <div class="current-username-edit__buttons">
+          <button class="current-username-edit__cancel" type="submit">취소</button>
+          <button class="current-username-edit__save" type="submit">수정하기</button>
+        </div>
+      </div>
+      <div class="current-username-edit__dim"></div>
+    </section>
     <article class="current-username-container hidden">
       <div class="current-username-left">
         <div class="current-username">{username}님</div>
@@ -78,5 +89,6 @@
     <script src="js/controlToDoList.js" defer></script>
     <script src="js/controlBG.js" defer></script>
     <script src="js/loadLocationWeather.js" defer></script>
+    <script src="js/editUserName.js" defer></script>
   </body>
 </html>
