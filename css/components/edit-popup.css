@@ -1,0 +1,80 @@
+.current-username-edit {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-username-edit__dim {
+  width: 100%;
+  height: 100%;
+  background-color: var(--windowDim);
+}
+
+.current-username-eidt__wrap {
+  position: absolute;
+  width: 26.5625rem;
+  border-radius: 30px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.current-username-edit__title {
+  margin-top: 3.125rem;
+  color: var(--textDefault);
+  text-align: center;
+  font-size: 1.625rem;
+}
+
+.current-username-edit__input {
+  width: 80%;
+  height: 3.4375rem;
+  background-color: white;
+  border: solid 1px var(--gray);
+  border-radius: 0.625rem;
+  font-size: 1.25rem;
+  color: var(--textDefault);
+  padding-left: 1.25rem;
+  margin: 1.9rem 0;
+}
+
+.current-username-edit__input::placeholder {
+  color: var(--textDefault);
+}
+
+.current-username-edit__buttons {
+  margin-bottom: 3.125rem;
+}
+
+.current-username-edit__buttons button {
+  padding: 1rem 2rem;
+  border-radius: 1.6875rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.current-username-edit__save {
+  background-color: var(--main);
+  color: white;
+}
+
+.current-username-edit__save:hover {
+  background-color: var(--main-hover);
+}
+
+.current-username-edit__save:active {
+  background-color: var(--main-active);
+}
+
+.current-username-edit__cancel {
+  color: var(--gray-deep);
+}
+
+.current-username-edit__cancel:hover {
+  color: var(--warmgray);
+}

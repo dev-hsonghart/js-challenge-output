@@ -73,8 +73,7 @@ function loadDones(){
 function moveItem(){
   const backlogItem = backlogList.querySelector(".backlog-item"),
     text = backlogItem.querySelector("span"),
-    btnDone = backlogItem.querySelector(".btn-done"),
-    newId = Math.random().toString(36).substr(2, 16);
+    btnDone = backlogItem.querySelector(".btn-done");
 
   // 타겟의 backlogItem을 doneList에 prepend한다.
   doneList.prepend(backlogItem);

@@ -3,6 +3,7 @@
 :root {
   /* grayscale */
   --textDefault: #222222;
+  --windowDim: rgba(0, 0, 0, 0.6);
   --blueWhite-60: rgba(226, 227, 230, 0.6);
   --blueWhite: #e2e3e6;
   --deepWhite: #ededef;
@@ -14,4 +15,7 @@
   --emerald: #38d66d;
   --emerald-deep: #1cb44f;
   --light-emerald: #d1ebd4;
+  --main: rgb(77, 133, 255);
+  --main-hover: rgb(50, 115, 255);
+  --main-active: rgb(30, 91, 224);
 }
