@@ -1,3 +1,7 @@
+// 1. USER_LS 값이 있을 때만 작동
+// 2. input.value가 있을 때만 사용자 이름 저장
+// 3. input.value 없이 수정하기 버튼을 누르거나 취소 버튼을 누를 경우 팝업 닫기
+
 const editUserNameBox = document.querySelector(".current-username-edit"),
   inputUserName = editUserNameBox.querySelector("input"),
   saveUserName = editUserNameBox.querySelector(".current-username-edit__save"),
