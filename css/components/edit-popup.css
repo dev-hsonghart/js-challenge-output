@@ -14,7 +14,7 @@
   background-color: var(--windowDim);
 }
 
-.current-username-eidt__wrap {
+.current-username-edit__wrap {
   position: absolute;
   width: 26.5625rem;
   border-radius: 30px;
