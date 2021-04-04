@@ -7,7 +7,8 @@
 // 6. 로컬스토리지에 backlog와 done의 아이템이 각각 저장된다.
 // 7. 새로고침 시 로컬스토리지 데이터를 불러와 html로 뿌린다.
 
-const toDoInputBox = document.querySelector(".input-form-todo"),
+const sectionToDoList = document.querySelector(".todo-list"),
+  toDoInputBox = document.querySelector(".input-form-todo"),
   backlogList = document.querySelector(".todo-list-backlog"),
   doneList = document.querySelector(".todo-list-done"),
   iconDelSvg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -96,11 +97,29 @@ function moveItem(){
   saveDone();
 }
 
+function removeAllItem(e){
+  e.preventDefault();
+
+  const backlogItems = backlogList.querySelectorAll(".backlog-item");
+  for(let i = 0; i < backlogItems.length; i++){
+    backlogItems[i].remove();
+    const cleanToDos = todos.filter(function(task){ // todos배열에 아래 조건에 맞는 것들을 모은다.
+      return task.id !== backlogItems[i].id; // 매개변수의 아이디와 해당대상의 아이디가 다른것들만 추리고 갖고 있는다.
+      }
+    )
+    todos = cleanToDos; 
+  }
+  saveToDo();
+  
+  allDel = sectionToDoList.querySelector(".btn-all-del");
+  allDel.remove();
+}
+
 function removeItem(e){
   const eClass = e.target.className,
     parent = e.target.parentNode;
   // backlogItem 지우기
-
+  
   if(eClass === "btn-del" && parent.className === "backlog-item"){ 
     // 로컬스토리지에서 타겟 id를 찾아 지운다.
     const cleanToDos = todos.filter(function(task){ // todos배열에 아래 조건에 맞는 것들을 모은다.
@@ -130,6 +149,7 @@ function paintToDo(text){
     span = document.createElement("span"),
     btnDel = document.createElement("button"),
     btnDone = document.createElement("button"),
+    btnAllDel = document.createElement("button"),
     newId = Math.random().toString(36).substr(2, 16);
 
   backlogList.prepend(div);
@@ -151,6 +171,14 @@ function paintToDo(text){
   const del = backlogItem.querySelector(".btn-del");
     del.innerHTML = iconDelSvg;
     del.addEventListener("click", removeItem);
+  
+  if(backlogList.children.length === 1){
+    sectionToDoList.prepend(btnAllDel);
+    btnAllDel.classList.add("btn-all-del");
+    const allDel = sectionToDoList.querySelector(".btn-all-del");
+    allDel.innerText = "전체 삭제";
+    allDel.addEventListener("click", removeAllItem);
+  }
 
   // 애니메이션 생성
   backlogItem.style.animation = "fadeIn 1.3s forwards"
