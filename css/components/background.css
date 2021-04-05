@@ -1,3 +1,5 @@
+@import "keyframe.css";
+
 .background-container {
   display: flex;
   justify-content: space-between;
@@ -6,24 +8,7 @@
   height: 100vh;
   z-index: -1;
   position: absolute;
-}
-
-@keyframes fadeInBG {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.background-img {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  object-fit: cover;
-  animation: fadeInBG 1s ease-in;
-  z-index: -1;
+  animation: fadeInOutBG 30s ease-out infinite;
 }
 
 .background-gradation {
