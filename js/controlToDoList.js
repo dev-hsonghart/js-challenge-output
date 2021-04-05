@@ -97,28 +97,23 @@ function moveItem(){
   saveDone();
 }
 
-function removeAllItem(e){
+function removeAllItem(e){ // backlogItem 전체 삭제
   e.preventDefault();
 
   const backlogItems = backlogList.querySelectorAll(".backlog-item");
   for(let i = 0; i < backlogItems.length; i++){
     backlogItems[i].remove();
-    const cleanToDos = todos.filter(function(task){ // todos배열에 아래 조건에 맞는 것들을 모은다.
-      return task.id !== backlogItems[i].id; // 매개변수의 아이디와 해당대상의 아이디가 다른것들만 추리고 갖고 있는다.
-      }
-    )
-    todos = cleanToDos; 
   }
+  todos = []; 
   saveToDo();
   
   allDel = sectionToDoList.querySelector(".btn-all-del");
   allDel.remove();
 }
 
-function removeItem(e){
+function removeItem(e){ // backlogItem 지우기
   const eClass = e.target.className,
     parent = e.target.parentNode;
-  // backlogItem 지우기
   
   if(eClass === "btn-del" && parent.className === "backlog-item"){ 
     // 로컬스토리지에서 타겟 id를 찾아 지운다.
@@ -128,6 +123,13 @@ function removeItem(e){
     )
 
     parent.remove();
+
+    const backlogItems = backlogList.querySelectorAll(".backlog-item");
+    if(backlogItems.length === 0){
+      allDel = sectionToDoList.querySelector(".btn-all-del");
+      allDel.remove();
+    } // 백로그 아이템을 하나씩 삭제할 때 더이상 백로그 아이템이 없으면 전체삭제 버튼 삭제
+
     todos = cleanToDos; // 투두스의 배열은 위에서 추린 배열과 같다.
     saveToDo(); // 달라진 투두스의 배열을 기존 스토리지에 덮어씌운다.
   }
