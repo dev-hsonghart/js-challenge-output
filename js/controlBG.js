@@ -3,21 +3,17 @@
 const bg = document.querySelector(".background-container");
   
 function getRandomNum(){
-  const number = Math.floor(Math.random() * 4);
-  return number;
+  return Math.floor(Math.random() * 226);
 }
 
-function displayBg(num){
-  const image = new Image();
-  image.src = `images/img/0${num + 1}.jpg`;
-  bg.appendChild(image);
-  image.classList.add("background-img");
-  
+function displayBg(){
+  bg.style.background = `linear-gradient(to right, rgba(${getRandomNum()}, ${getRandomNum()}, ${getRandomNum()}), rgba(${getRandomNum()}, ${getRandomNum()}, ${getRandomNum()}))`
+  bg.style.opacity = 0;
 }
 
 function init(){
-  const randomNum = getRandomNum();
-  displayBg(randomNum);
+  displayBg();
+  setInterval(displayBg, 30000);
 }
 
 init();
