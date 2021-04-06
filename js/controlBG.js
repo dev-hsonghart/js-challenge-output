@@ -1,4 +1,4 @@
-// 1. 새로고침 시 배경이미지가 랜덤으로 뿌려진다.
+// 1. 30초마다 배경 색상이 랜덤으로 뿌려진다.
 
 const bg = document.querySelector(".background-container");
 
