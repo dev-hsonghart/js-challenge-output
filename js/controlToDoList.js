@@ -87,10 +87,6 @@ function moveItem(){
   todos = cleanToDos; // 투두스의 배열은 위에서 추린 배열과 같다.
   saveToDo(); // 투두스 로컬스토리지 업데이트
 
-  if(backlogList.children.length === 0){
-    const allDel = sectionToDoList.querySelector(".btn-all-del");
-      allDel.remove();
-  }
   // 로컬스토리지 dones에 보내기
   const doneObj = {
     id : backlogItem.id,
@@ -99,6 +95,12 @@ function moveItem(){
 
   dones.push(doneObj);
   saveDone();
+
+  // 전체 삭제 버튼 없애기  
+  if(backlogList.children.length === 0){
+    const allDel = sectionToDoList.querySelector(".btn-all-del");
+      allDel.remove();
+  }
 }
 
 function removeAllItem(e){ // backlogItem 전체 삭제
