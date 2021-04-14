@@ -26,3 +26,13 @@
 .input-todo {
   background-color: rgba(255, 255, 255, 0.6);
 }
+
+@media screen and (max-width: 720px) {
+  .input-form-username,
+  .input-form-todo,
+  .input-form-username:focus,
+  .input-form-todo:focus {
+    width: calc(100% - 50%);
+    height: 3.4rem;
+  }
+}

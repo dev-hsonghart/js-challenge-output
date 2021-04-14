@@ -73,3 +73,14 @@
   position: relative;
   bottom: -50;
 }
+
+@media screen and (max-width: 720px) {
+  .current-date-weather {
+    width: calc(100vw - 50%);
+    min-width: 460px;
+    max-width: 600px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
