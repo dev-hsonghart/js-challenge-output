@@ -129,9 +129,3 @@
 .btn-all-del:active {
   background-color: var(--deep-red);
 }
-
-@media screen and (max-width: 720px) {
-  .todo-list-done {
-    display: none;
-  }
-}
