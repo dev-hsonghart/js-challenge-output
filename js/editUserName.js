@@ -9,14 +9,16 @@ const editUserNameBox = document.querySelector(".current-username-edit"),
 
 function saveValue(e){
   e.stopPropagation();
-  if(inputUserName.value !== null){
-    const text = inputUserName.value;
-    localStorage.setItem("userName", text);
+
+  const inputValue = inputUserName.value;
+  
+  if(inputValue !== ""){ // input에 입력값이 있으면
+    localStorage.setItem("userName", inputValue);
     editUserNameBox.style.display = "none";
-    currentUserName.innerText = `${text} 님!`;
-  } else{
-    editUserNameBox.style.display = "none";
+    currentUserName.innerText = `${inputValue} 님!`;
   }
+  editUserNameBox.style.display = "none";
+
 }
   
 function closeEditPopup(e){
@@ -27,7 +29,6 @@ function closeEditPopup(e){
 function printEditPopup(e){
   e.stopPropagation(); // 이벤트 버블링 방지
   editUserNameBox.style.display = "flex";
-
   printCurrentName();
   cancelUserName.addEventListener("click", closeEditPopup); // 취소 버튼
   saveUserName.addEventListener("click", saveValue);

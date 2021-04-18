@@ -53,12 +53,12 @@ function saveDone(){
 
 function loadTodos(){
   const toDoData = localStorage.getItem(TODO_LS);
-    if(toDoData !== null){
-        const pasredToDos = JSON.parse(toDoData);
-        pasredToDos.forEach(data => {
-            paintToDo(data.text)
-        })
-    }
+  if(toDoData !== null){
+      const pasredToDos = JSON.parse(toDoData);
+      pasredToDos.forEach(data => {
+          paintToDo(data.text)
+      })
+  }
 }
 
 function loadDones(){
@@ -141,7 +141,7 @@ function removeItem(e){ // backlogItem 지우기
   }
 
   // todoItem 지우기
-  else if(eClass === "btn-del" && parent.className === "done-item"){
+  if(eClass === "btn-del" && parent.className === "done-item"){
     const cleanDones = dones.filter(function(task){
       return task.id !== parent.id;
     })
@@ -162,20 +162,21 @@ function paintToDo(text){
 
   backlogList.prepend(div);
   div.classList.add("backlog-item");
+
   const backlogItem = backlogList.querySelector(".backlog-item");
-  
   backlogItem.appendChild(span);
+
   const toDoText = backlogList.querySelector("span");
     toDoText.innerText = text; // todo item 생성
-
   backlogItem.appendChild(btnDone);
   btnDone.classList.add("btn-done");
+
   const done = backlogItem.querySelector(".btn-done");
     done.innerHTML = iconCheckSvg;
     done.addEventListener("click", moveItem);
-
   backlogItem.appendChild(btnDel);
   btnDel.classList.add("btn-del");
+  
   const del = backlogItem.querySelector(".btn-del");
     del.innerHTML = iconDelSvg;
     del.addEventListener("click", removeItem);
@@ -209,21 +210,22 @@ function paintDone(text){ // 로컬스토리지 DONE에 있는 데이터를 dons
 
   doneList.prepend(div);
   div.classList.add("done-item");
+
   const doneItem = doneList.querySelector(".done-item");
-  
   doneItem.appendChild(span);
+
   const doneText = doneList.querySelector("span");
     doneText.innerText = text; // todo item 생성
-
   doneItem.appendChild(btnDel);
   btnDel.classList.add("btn-del");
+
   const del = doneItem.querySelector(".btn-del");
     del.innerHTML = iconDelSvg;
     del.addEventListener("click", removeItem);
 
   doneItem.style.animation = "fadeIn 1.3s forwards"
-
   doneItem.id = newId;
+
   const doneObj = {
     id : newId,
     text : text

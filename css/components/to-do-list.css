@@ -4,8 +4,7 @@
   width: calc(100vw - 50%);
   min-width: 460px;
   max-width: 600px;
-  height: calc(100vh - 2.25rem - 5rem - 11.25rem - 3.4rem - 3rem);
-  margin-top: 36px;
+  height: calc(100vh - 560px);
   display: flex;
   justify-content: center;
   color: var(--textDefault);

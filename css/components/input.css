@@ -3,8 +3,12 @@
   width: calc(100% - 50%);
   min-width: 28.75rem;
   max-width: 600px;
-  height: 3.4rem;
+  height: 54px;
   margin-top: 3rem;
+}
+
+.input-form-todo {
+  margin-bottom: 54px;
 }
 
 .input-username,
@@ -14,7 +18,7 @@
   border-radius: 10px;
   background-color: white;
   padding-left: 30px;
-  font-size: 1.1rem;
+  font-size: 17px;
   color: var(--textDefault);
 }
 

@@ -30,19 +30,12 @@ function getWeather(lat, lon){
       cityDisplay.innerText = currentCity;
       tempDisplay.innerText = `${currentTemp} ˚`;
 
-      if(currentWeather === "Clouds"){ //날씨가 흐릴 때 
-        skyDisplay.innerText = "☁️";
-      } else if(currentWeather === "Thunderstorm"){ //날씨가 천둥번개일 때 
-        skyDisplay.innerText = "⛈";
-      } else if(currentWeather === "Drizzle"){ //날씨가 부슬비 때 
-        skyDisplay.innerText = "🌦";
-      } else if(currentWeather === "Rain"){ //날씨가 비 내랄 때 
-        skyDisplay.innerText = "🌧";
-      } else if(currentWeather === "Snow"){ // 날씨가 눈 내릴 때
-        skyDisplay.innerText = "❄️";
-      } else if(currentWeather === "Clear"){ //날씨가 화찰할 때
-        skyDisplay.innerText = "☀️";
-      } 
+      if(currentWeather === "Clouds") skyDisplay.innerText = "☁️";//날씨가 흐릴 때 
+      if(currentWeather === "Thunderstorm") skyDisplay.innerText = "⛈";//날씨가 천둥번개일 때 
+      if(currentWeather === "Drizzle")skyDisplay.innerText = "🌦"; //날씨가 부슬비 때 
+      if(currentWeather === "Rain") skyDisplay.innerText = "🌧";//날씨가 비 내랄 때 
+      if(currentWeather === "Snow") skyDisplay.innerText = "❄️";// 날씨가 눈 내릴 때
+      if(currentWeather === "Clear") skyDisplay.innerText = "☀️";//날씨가 화찰할 때
         // 애니메이션
       if(skyDisplay.innerText !== ""){
         cityDisplay.classList.remove("none");
