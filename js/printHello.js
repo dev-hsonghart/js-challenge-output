@@ -37,27 +37,16 @@ function printHello(){
   currentTime = new Date(),
   hour = currentTime.getHours();
 
-  function randomHello(a){ // 배열안에서 랜덤 뽑기
-    return a[Math.floor(Math.random() * a.length)]
+  function randomHello(helloStr){ // 배열안에서 랜덤 뽑기
+    return helloStr[Math.floor(Math.random() * helloStr.length)]
   }
 
-  if(hour >= 6 && hour < 12 )// 6~12 아침
-    {   
-      displayHello.innerText = randomHello(helloMorning);
-    }
-  else if(hour >= 12 && hour < 18)// 12~18 점심
-    {
-      displayHello.innerText = randomHello(helloDay);
-    }
-  else if(hour >= 18 && hour < 24)// 18~24 저녁
-    {
-      displayHello.innerText = randomHello(helloEvening);
-    }
-  else if(hour >= 0 && hour < 6) // 00~6 새벽
-    {
-      displayHello.innerText = randomHello(helloNight);
-    }
-    displayHello.style.animation = "fadeInOut 60s ease-out infinite"
+  if(hour >= 6 && hour < 12 ) displayHello.innerText = randomHello(helloMorning);// 6~12 아침
+  if(hour >= 12 && hour < 18) displayHello.innerText = randomHello(helloDay);// 12~18 점심
+  if(hour >= 18 && hour < 24) displayHello.innerText = randomHello(helloEvening);// 18~24 저녁
+  if(hour >= 0 && hour < 6) displayHello.innerText = randomHello(helloNight); // 00~6 새벽
+  // animation
+  displayHello.style.animation = "fadeInOut 60s ease-out infinite"
 }
 
 function setHelloText(){
@@ -72,7 +61,7 @@ function init(){
   if(displayHello.innerText === ""){
     printHello();
   } 
-    setInterval(printHello, 60000)
+  setInterval(printHello, 60000)
    // 한시간마다 다른 인삿말 출력
 }
 

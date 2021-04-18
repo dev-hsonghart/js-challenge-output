@@ -2,13 +2,13 @@
 // 2. 불러온 시각을 html에 출력한다.
 
 const leftColumn = document.querySelector(".left"),
-paintMonth = leftColumn.querySelector(".month"),
-paintDate = leftColumn.querySelector(".date"),
-paintDay = leftColumn.querySelector(".day"),
+  paintMonth = leftColumn.querySelector(".month"),
+  paintDate = leftColumn.querySelector(".date"),
+  paintDay = leftColumn.querySelector(".day"),
 
-rightColumn = document.querySelector(".right"),
-paintHour = rightColumn.querySelector(".current-hour"),
-paintMinutes = rightColumn.querySelector(".current-minutes");
+  rightColumn = document.querySelector(".right"),
+  paintHour = rightColumn.querySelector(".current-hour"),
+  paintMinutes = rightColumn.querySelector(".current-minutes");
 
 
 function getTime(){

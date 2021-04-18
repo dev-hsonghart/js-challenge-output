@@ -36,7 +36,8 @@ function init(){
 
     }  
   )}
-  else{
+  
+  if(USER_LS !== null){
     userNameInputForm.remove();
     userNameInputForm.classList.add("none");
     displayUserName(USER_LS);
